@@ -1,0 +1,23 @@
+@relation meteorologique
+
+@attribute ensoleillement {soleil, couvert, pluie}
+@attribute temperature {chaud, bon, frais}
+@attribute humidite {haute, normale}
+@attribute vent {true, false}
+@attribute jouer{oui, non}
+
+@data
+soleil,chaud,haute,false,non
+soleil,chaud,haute,true,non
+couvert,chaud,haute,false,oui
+pluie,bon,haute,false,oui
+pluie,frais,normale,false,oui
+pluie,frais,normale,true,non
+couvert,frais,normale,true,oui
+soleil,bon,haute,false,non
+soleil,frais,normale,false,oui
+pluie,bon,normale,false,oui
+soleil,bon,normale,true,oui
+couvert,bon,haute,true,oui
+couvert,chaud,normale,false,oui
+pluie,bon,haute,true,non

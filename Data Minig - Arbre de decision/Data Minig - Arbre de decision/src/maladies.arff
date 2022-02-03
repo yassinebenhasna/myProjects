@@ -1,0 +1,17 @@
+@relation maladies.symbolic
+
+@attribute fievre {oui, non}
+@attribute douleur {abdomen, gorge, nothing}
+@attribute toux {existe, rien}
+@attribute maladie{appendicite, rhume, malGorge, refroidissement, aucune}
+
+@data
+oui,abdomen,rien,appendicite
+non,abdomen,existe,appendicite
+oui,gorge,rien,rhume
+oui,gorge,existe,rhume
+non,gorge,existe,malGorge
+oui,nothing,rien,aucune
+oui,nothing,existe,rhume
+non,nothing,existe,refroidissement
+non,nothing,rien,aucune

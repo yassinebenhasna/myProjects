@@ -1,0 +1,59 @@
+<html>
+<head>
+    {% load static %}
+	<link rel="stylesheet" href="{% static '/fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+	<link rel="stylesheet" href="{% static '/vendor/animate/animate.css' %}">
+	<link rel="stylesheet" href="{% static '/vendor/select2/select2.min.css' %}">
+    <link rel="stylesheet" href="{% static '/vendor/bootstrap/css/bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static '/vendor/perfect-scrollbar/perfect-scrollbar.css' %}">
+    <link rel="stylesheet" href="{% static '/css/main.css' %}"/>
+	<link rel="stylesheet" href="{% static '/css2/main.css' %}">
+	<link rel="stylesheet" href="{% static '/css2/util.css' %}">
+</head>
+
+  <body>
+    <div class="s01">
+        <div class="wrap-table100">
+            <div class="table100 ver1 m-b-110">
+                <div class="table100-head">
+                    <table>
+                        <tr>
+                            <th class="cell100 column1">Résultat de la Regex</th>
+                            <th><a href="csv?name={{name}}" style="color:white">Exporter en CSV</a></th>
+                        </tr>
+                    </table>
+                </div>
+                <div class="table100-body js-pscroll">
+                    <table>
+                        <tbody>
+                            {% for item in results %}
+                            <tr class="row100 body">
+                                <td class="cell100 column1">{{ item }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    {% load static %}
+	<script src="{% static 'vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/js/popper.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'vendor/select2/select2.min.js' %}"></script>
+    
+    <script src="{% static 'vendor/perfect-scrollbar/perfect-scrollbar.min.js' %}"></script>
+    <script>
+        $('.js-pscroll').each(function(){
+            var ps = new PerfectScrollbar(this);
+            $(window).on('resize', function(){
+                ps.update();
+            })
+        });
+    </script>
+    <script src="{% static 'js/main.js' %}"></script>
+  </body>
+</html>

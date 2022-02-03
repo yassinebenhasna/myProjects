@@ -1,0 +1,174 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>@ViewBag.Title</title>
+
+    @RenderSection("head", required: false)
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+
+    <link href="https://fonts.googleapis.com/css?family=Muli:300,400,700,900" rel="stylesheet" />
+    <link rel="stylesheet" href="~/MyContent/fonts/icomoon/style.css" />
+
+    <link rel="stylesheet" href="~/MyContent/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/MyContent/css/jquery-ui.css" />
+    <link rel="stylesheet" href="~/MyContent/css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="~/MyContent/css/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="~/MyContent/css/owl.theme.default.min.css" />
+
+    <link rel="stylesheet" href="~/MyContent/css/jquery.fancybox.min.css" />
+
+    <link rel="stylesheet" href="~/MyContent/css/bootstrap-datepicker.css" />
+
+    <link rel="stylesheet" href="~/MyContent/fonts/flaticon/font/flaticon.css" />
+
+    <link rel="stylesheet" href="~/MyContent/css/aos.css" />
+
+    <link rel="stylesheet" href="~/MyContent/css/style.css" />
+
+</head>
+
+
+<body>
+
+
+    <div class="site-wrap" >
+
+        <div class="site-mobile-menu site-navbar-target">
+            <div class="site-mobile-menu-header">
+                <div class="site-mobile-menu-close mt-3">
+                    <span class="icon-close2 js-menu-toggle"></span>
+                </div>
+            </div>
+            <div class="site-mobile-menu-body"></div>
+        </div>
+
+
+        <header class="site-navbar py-4 js-sticky-header site-navbar-target" role="banner">
+
+            <div class="container-fluid" >
+                <div class="d-flex align-items-center">
+                    <div class="site-logo mr-auto w-25"><a href="@Url.Action("Home", "Admin")"><img src="../../MyContent/images/logo.svg" alt="" style="width: 170px;"></a></div>
+
+                    <div class="mx-auto text-center">
+                        <nav class="site-navigation position-relative text-right" role="navigation">
+                            <ul class="site-menu main-menu js-clone-nav mx-auto d-none d-lg-block  m-0 p-0">
+
+                                <li><a href="#HOME">Home</a></li>
+
+                                <li><a href="#OP">Opération</a></li>
+
+                                <li><a href="#CRUD">CRUD</a></li>
+
+                            </ul>
+                    </nav>
+                </div>
+
+                    <div class="ml-auto w-25">
+                        <nav class="site-navigation position-relative text-right" role="navigation">
+                            <ul class="site-menu main-menu site-menu-dark js-clone-nav mr-auto d-none d-lg-block m-0 p-0">
+                                <li class="cta"><a href="@Url.Action("LogOut", "Admin")" class="nav-link"><span>Log Out</span></a></li>
+                                <span style="color: cyan">Bienvenue Mr.@Session["nom"]</span>
+                            </ul>
+                        </nav>
+                        <a href="#" class="d-inline-block d-lg-none site-menu-toggle js-menu-toggle text-black float-right"><span class="icon-menu h3"></span></a>
+                    </div>
+                    
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+
+
+        <div>@RenderBody()</div>
+
+
+
+
+        <footer class="footer-section bg-white">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <img src="../../MyContent/images/title.svg" alt="" style="width: 300px;">
+                    </div>
+                    
+                    <div class="col-md-5 ml-auto">
+                        <h3>Contact</h3>
+                        <!--<ul class="list-unstyled footer-links">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Courses</a></li>
+                            <li><a href="#">Programs</a></li>
+                            <li><a href="#">Teachers</a></li>
+                        </ul>
+                        -->
+                        <p>Adresse : Faculté des Sciences</p>
+                        <p> BV Mohammed VI - BP 717 Oujda 60000</p>
+                        <p>   Maroc</p>
+                        <p>   Phone :+212 536500601/2</p>
+                        <p>   Fax :+212 536500603</p>
+                    </div>
+                    <!--
+                    <div class="col-md-4">
+                        <h3>Subscribe</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt incidunt iure iusto architecto? Numquam, natus?</p>
+                        <form action="#" class="footer-subscribe">
+                            <div class="d-flex mb-5">
+                                <input type="text" class="form-control rounded-0" placeholder="Email">
+                                <input type="submit" class="btn btn-primary rounded-0" value="Subscribe">
+                            </div>
+                        </form>
+                    </div>
+                    -->
+                </div>
+
+                <div class="row pt-5 mt-5 text-center">
+                    <div class="col-md-12">
+                        <div class="border-top pt-5">
+                            <p>
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                Copyright &copy;
+                                <script>document.write(new Date().getFullYear());</script> All rights reserved | BENHASNA Yassine && KACHOUTI Mohamed
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </footer>
+
+
+
+    </div> <!-- .site-wrap -->
+
+    <script src="~/MyContent/js/jquery-3.3.1.min.js"></script>
+    <script src="~/MyContent/js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="~/MyContent/js/jquery-ui.js"></script>
+    <script src="~/MyContent/js/popper.min.js"></script>
+    <script src="~/MyContent/js/bootstrap.min.js"></script>
+    <script src="~/MyContent/js/owl.carousel.min.js"></script>
+    <script src="~/MyContent/js/jquery.stellar.min.js"></script>
+    <script src="~/MyContent/js/jquery.countdown.min.js"></script>
+    <script src="~/MyContent/js/bootstrap-datepicker.min.js"></script>
+    <script src="~/MyContent/js/jquery.easing.1.3.js"></script>
+    <script src="~/MyContent/js/aos.js"></script>
+    <script src="~/MyContent/js/jquery.fancybox.min.js"></script>
+    <script src="~/MyContent/js/jquery.sticky.js"></script>
+
+
+    <script src="~/MyContent/js/main.js"></script>
+
+
+
+</body>
+
+
+</html>

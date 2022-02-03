@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="getMoyenneSemestre">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="apogee" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="semestre" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getMoyenneSemestreResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="getMoyenneSemestreResult" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMoyenneAnnee">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="apogee" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="annee" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="semestre1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="semestre2" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMoyenneAnneeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetMoyenneAnneeResult" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMoyenneMasterMention">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="apogee" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMoyenneMasterMentionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMoyenneMasterMentionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="validationSemestre">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="apogee" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="semestre" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="validationSemestreResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="validationSemestreResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="getMoyenneSemestreSoapIn">
+    <wsdl:part name="parameters" element="tns:getMoyenneSemestre" />
+  </wsdl:message>
+  <wsdl:message name="getMoyenneSemestreSoapOut">
+    <wsdl:part name="parameters" element="tns:getMoyenneSemestreResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMoyenneAnneeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMoyenneAnnee" />
+  </wsdl:message>
+  <wsdl:message name="GetMoyenneAnneeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMoyenneAnneeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMoyenneMasterMentionSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMoyenneMasterMention" />
+  </wsdl:message>
+  <wsdl:message name="GetMoyenneMasterMentionSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMoyenneMasterMentionResponse" />
+  </wsdl:message>
+  <wsdl:message name="validationSemestreSoapIn">
+    <wsdl:part name="parameters" element="tns:validationSemestre" />
+  </wsdl:message>
+  <wsdl:message name="validationSemestreSoapOut">
+    <wsdl:part name="parameters" element="tns:validationSemestreResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebService1Soap">
+    <wsdl:operation name="getMoyenneSemestre">
+      <wsdl:input message="tns:getMoyenneSemestreSoapIn" />
+      <wsdl:output message="tns:getMoyenneSemestreSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMoyenneAnnee">
+      <wsdl:input message="tns:GetMoyenneAnneeSoapIn" />
+      <wsdl:output message="tns:GetMoyenneAnneeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMoyenneMasterMention">
+      <wsdl:input message="tns:GetMoyenneMasterMentionSoapIn" />
+      <wsdl:output message="tns:GetMoyenneMasterMentionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="validationSemestre">
+      <wsdl:input message="tns:validationSemestreSoapIn" />
+      <wsdl:output message="tns:validationSemestreSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebService1Soap" type="tns:WebService1Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getMoyenneSemestre">
+      <soap:operation soapAction="http://tempuri.org/getMoyenneSemestre" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMoyenneAnnee">
+      <soap:operation soapAction="http://tempuri.org/GetMoyenneAnnee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMoyenneMasterMention">
+      <soap:operation soapAction="http://tempuri.org/GetMoyenneMasterMention" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="validationSemestre">
+      <soap:operation soapAction="http://tempuri.org/validationSemestre" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebService1Soap12" type="tns:WebService1Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getMoyenneSemestre">
+      <soap12:operation soapAction="http://tempuri.org/getMoyenneSemestre" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMoyenneAnnee">
+      <soap12:operation soapAction="http://tempuri.org/GetMoyenneAnnee" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMoyenneMasterMention">
+      <soap12:operation soapAction="http://tempuri.org/GetMoyenneMasterMention" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="validationSemestre">
+      <soap12:operation soapAction="http://tempuri.org/validationSemestre" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebService1">
+    <wsdl:port name="WebService1Soap" binding="tns:WebService1Soap">
+      <soap:address location="https://localhost:44369/WebService1.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebService1Soap12" binding="tns:WebService1Soap12">
+      <soap12:address location="https://localhost:44369/WebService1.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

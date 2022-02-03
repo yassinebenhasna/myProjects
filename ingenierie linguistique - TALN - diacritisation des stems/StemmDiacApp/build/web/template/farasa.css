@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css?family=Aref+Ruqaa|Tajawal&subset=arabic');
+
+#charts{
+    padding-top: 0rem !important;
+    /*margin-top: -2rem !important;*/
+}
+
+#raw-text{
+    line-height: 200%;
+    width:100%;
+    direction:rtl;
+    font-size:28px;
+    font-family: 'Tajawal', sans-serif;
+ }
+
+#analyzedText{
+    line-height: 200%;
+    width:100%;
+    direction:rtl;
+    font-size:28px;
+    font-family: 'Tajawal', sans-serif;
+    overflow-wrap: break-word;
+    text-align: right;
+ }
+
+#output p{
+    line-height: 200%;
+    width:100%;
+    direction:rtl;
+    font-size:28px;
+    font-family: 'Tajawal', sans-serif;
+    overflow-wrap: break-word;
+    text-align: right;
+ }
+
+
+#module{
+    padding-top: 0;
+    padding-bottom: 0;
+    font-size: 100%;
+    font-family: 'Tajawal', sans-serif; }

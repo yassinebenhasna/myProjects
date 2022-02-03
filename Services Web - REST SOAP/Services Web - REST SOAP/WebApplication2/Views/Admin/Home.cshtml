@@ -1,0 +1,530 @@
+﻿@model string
+@using System.Configuration
+@using System.Data.SqlClient
+@{
+    ViewBag.Title = "home";
+    Layout = "~/Views/Shared/_MyLayout.cshtml";
+}
+
+<!---------------------------------------------------------------------- SW 1---------------------------------------------------------------------------------->
+
+<div style="background-image: url('../../MyContent/images/lib2.jpg'); " class="site-section courses-title" id="HOME">
+    <div class="container">
+        <div class="row mb-5 justify-content-center">
+            <div class="col-lg-7 text-center aos-init aos-animate" data-aos="fade-up" data-aos-delay="">
+                <h2 class="section-title"></h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="site-section courses-entry-wrap" data-aos="fade-up" data-aos-delay="100">
+    <div class="container">
+        <div class="row">
+
+
+
+            <div class="owl-carousel col-12 nonloop-block-14">
+
+                <div class="course bg-white h-100 align-self-stretch">
+                    <figure class="m-0">
+                        <a href="@Url.Action("AllMasters", "Admin")"><img src="../../MyContent/images/img_1.jpg" width="500" height="300" alt="Image" class="img-fluid"></a>
+                    </figure>
+                    <div class="course-inner-text py-4 px-4">
+                        <!--<span class="course-price">$20</span>
+                        <div class="meta"><span class="icon-clock-o"></span>4 Lessons / 12 week</div>-->
+                        <h3 style="color: deepskyblue">Master</h3>
+                        <p>Les Masters existent dans la Faculté. </p>
+                    </div>
+                    <div class="d-flex border-top stats">
+                        <div class="py-3 px-4"><span class="icon-bar"></span>@Html.ActionLink("Afficher XML", "AllMasters", "Admin")</div>
+                        <!--<div class="py-3 px-4 w-25 ml-auto border-left"><span class="icon-chat"></span> 2</div>-->
+                    </div>
+                </div>
+
+
+                <div class="course bg-white h-100 align-self-stretch">
+                    <figure class="m-0">
+                        <a href="@Url.Action("EtudSem", "Admin")"><img src="../../MyContent/images/students.jpg" width="500" height="300" alt="Image" class="img-fluid"></a>
+                    </figure>
+                    <div class="course-inner-text py-4 px-4">
+                        <!--<span class="course-price">$20</span>
+                        <div class="meta"><span class="icon-clock-o"></span>4 Lessons / 12 week</div>-->
+                        <h3 style="color: deepskyblue">Etudiants & Semestre</h3>
+                        <p>Afficher la liste des étudiants inscrits durant un semestre et un Master donné. </p>
+                    </div>
+                    <div class="d-flex border-top stats">
+                        <div class="py-3 px-4">
+                            <span class="icon-bar"></span>&nbsp;&nbsp;
+                            @Html.ActionLink("Afficher XML", "EtudSem", "Admin")  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            @Html.ActionLink("Télécharger PDF", "EtudSem", "Admin")
+                        </div>
+                        <!--<div class="py-3 px-4 w-25 ml-auto border-left"><span class="icon-chat"></span> 2</div>-->
+                    </div>
+                </div>
+
+
+
+                <div class="course bg-white h-100 align-self-stretch">
+                    <figure class="m-0">
+                        <a href="@Url.Action("EtudMod", "Admin")"><img src="../../MyContent/images/Note-scolaire.jpg" width="500" height="300" alt="Image" class="img-fluid"></a>
+                    </figure>
+                    <div class="course-inner-text py-4 px-4">
+                        <!--<span class="course-price">$20</span>
+                        <div class="meta"><span class="icon-clock-o"></span>4 Lessons / 12 week</div>-->
+                        <h3 style="color: deepskyblue">Etudiants & Module</h3>
+                        <p>Afficher la liste des étudiants avec leurs notes de chaque module, pour un master et un semestre donné. </p>
+                    </div>
+                    <div class="d-flex border-top stats">
+                        <div class="py-3 px-4">
+                            <span class="icon-bar"></span>
+                            @Html.ActionLink("Afficher XML", "EtudMod", "Admin")
+                        </div>
+                        <!--<div class="py-3 px-4 w-25 ml-auto border-left"><span class="icon-chat"></span> 2</div>-->
+                    </div>
+                </div>
+
+
+                <div class="course bg-white h-100 align-self-stretch">
+                    <figure class="m-0">
+                        <a href="@Url.Action("Rlv", "Admin")"><img src="../../MyContent/images/rlv.jpg" width="500" height="300" alt="Image" class="img-fluid"></a>
+                    </figure>
+                    <div class="course-inner-text py-4 px-4">
+                        <!--<span class="course-price">$20</span>
+                        <div class="meta"><span class="icon-clock-o"></span>4 Lessons / 12 week</div>-->
+                        <h3 style="color: deepskyblue">Relevé de Notes</h3>
+                        <p>Pour un étudiant donné, Afficher un relevé des notes pour un semestre donnée. </p>
+                    </div>
+                    <div class="d-flex border-top stats">
+                        <div class="py-3 px-4">
+                            <span class="icon-bar"></span>&nbsp;&nbsp;
+                            @Html.ActionLink("Afficher XML", "Rlv", "Admin")  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            @Html.ActionLink("Télécharger PDF", "Rlv", "Admin")
+                        </div>
+                        <!--<div class="py-3 px-4 w-25 ml-auto border-left"><span class="icon-chat"></span> 2</div>-->
+                    </div>
+                </div>
+
+
+                <div class="course bg-white h-100 align-self-stretch">
+                    <figure class="m-0">
+                        <a href="@Url.Action("Att", "Admin")"><img src="../../MyContent/images/slider_1.jpg" width="500" height="300" alt="Image" class="img-fluid"></a>
+                    </figure>
+                    <div class="course-inner-text py-4 px-4">
+                        <!--<span class="course-price">$20</span>
+                        <div class="meta"><span class="icon-clock-o"></span>4 Lessons / 12 week</div>-->
+                        <h3 style="color: deepskyblue">Attestation de Réussite</h3>
+                        <p>Consulter l'attestation de réussite d'un étudiant donné. </p>
+                    </div>
+                    <div class="d-flex border-top stats">
+                        <div class="py-3 px-4">
+                            <span class="icon-bar"></span>
+                            @Html.ActionLink("Télécharger PDF", "Att", "Admin")
+                        </div>
+                        <!--<div class="py-3 px-4 w-25 ml-auto border-left"><span class="icon-chat"></span> 2</div>-->
+                    </div>
+                </div>
+
+            </div>
+
+
+
+
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-7 text-center">
+                <button class="customPrevBtn btn btn-primary m-1">Prev</button>
+                <button class="customNextBtn btn btn-primary m-1">Next</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!---------------------------------------------------------------------- SW 2---------------------------------------------------------------------------------->
+
+
+
+<div style="background-image: url('../../MyContent/images/lib.jpg');" class="site-section courses-title" id="OP">
+    <div class="container">
+        <div class="row mb-5 justify-content-center">
+            <br /><br /><br /><br /><br />
+            <div class="col-lg-9 text-center aos-init aos-animate" data-aos="fade-up" data-aos-delay="">
+                <h2 class="section-title">Opération</h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="site-section courses-entry-wrap" data-aos="fade-up" data-aos-delay="100">
+    <div class="container">
+        <div class="row">
+
+            <div class="owl-carousel col-12 nonloop-block-14">
+
+
+
+
+                <div class="course bg-white h-100 align-self-stretch">
+                    <figure class="m-0">
+                        <img src="../../MyContent/images/moy.jpg" width="500" height="300" alt="Image" class="img-fluid">
+                    </figure>
+                    <div class="course-inner-text py-4 px-4">
+                        <!--<span class="course-price">$20</span>
+                        <div class="meta"><span class="icon-clock-o"></span>4 Lessons / 12 week</div>-->
+                        <h3 style="color: deepskyblue">Semestre Moyenne</h3>
+                        <p>Fournir la moyenne d'un semestre pour un étudiant donné. </p>
+                    </div>
+                    <div class="d-flex border-top stats">
+                        <div class="py-3 px-4">
+                            <span class="icon-bar"></span>
+                            <div class="form-box">
+                                @using (Html.BeginForm("SemMoy", "Soap", FormMethod.Post))
+                                {
+                                    SqlConnection connexion = new SqlConnection();
+                                    connexion.ConnectionString = ConfigurationManager.ConnectionStrings["DBconnexion"].ToString();
+                                    connexion.Open();
+                                    SqlCommand cmd = new SqlCommand("select nom,NApoge from Personne", connexion);
+
+                                    List<string> allMaster = new List<string>();
+
+
+                                    SqlDataReader dr = cmd.ExecuteReader();
+                                    while (dr.Read())
+                                    {
+                                        allMaster.Add(dr[0].ToString() + ":" + dr[1].ToString());
+                                    }
+                                    connexion.Close();
+
+                                    <div class="form-group">
+                                        <select name="apoge">
+                                            @{
+                                                foreach (var VARIABLE in allMaster)
+                                                {
+                                                    <option value="@VARIABLE.Split(':')[1]">@VARIABLE</option>
+                                                }
+                                            }
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <select name="sem">
+
+                                            <option value="s1">s1</option>
+                                            <option value="s2">s2</option>
+                                            <option value="s3">s3</option>
+                                            <option value="s4">s4</option>
+
+                                        </select>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <input type="submit" name="formEtudSem" class="btn btn-primary btn-pill" value="Afficher">
+
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                        <!--<div class="py-3 px-4 w-25 ml-auto border-left"><span class="icon-chat"></span> 2</div>-->
+                    </div>
+                </div>
+
+
+                <div class="course bg-white h-100 align-self-stretch">
+                    <figure class="m-0">
+                        <img src="../../MyContent/images/moyAnn.jpg" width="500" height="300" alt="Image" class="img-fluid">
+                    </figure>
+                    <div class="course-inner-text py-4 px-4">
+                        <!--<span class="course-price">$20</span>
+                        <div class="meta"><span class="icon-clock-o"></span>4 Lessons / 12 week</div>-->
+                        <h3 style="color: deepskyblue">Année Moyenne</h3>
+                        <p>Fournir la moyenne d'une année pour un étudiant donné. </p>
+                    </div>
+                    <div class="d-flex border-top stats">
+                        <div class="py-3 px-4"><span class="icon-bar"></span></div>
+                        <!--<div class="py-3 px-4 w-25 ml-auto border-left"><span class="icon-chat"></span> 2</div>-->
+                        <div class="form-box">
+                            @using (Html.BeginForm("AnnMoy", "Soap", FormMethod.Post))
+                            {
+                                SqlConnection connexion = new SqlConnection();
+                                connexion.ConnectionString = ConfigurationManager.ConnectionStrings["DBconnexion"].ToString();
+                                connexion.Open();
+                                SqlCommand cmd = new SqlCommand("select nom,NApoge from Personne", connexion);
+
+                                List<string> allMaster = new List<string>();
+
+
+                                SqlDataReader dr = cmd.ExecuteReader();
+                                while (dr.Read())
+                                {
+                                    allMaster.Add(dr[0].ToString() + ":" + dr[1].ToString());
+                                }
+                                connexion.Close();
+
+
+
+
+                                SqlConnection connexion2 = new SqlConnection();
+                                connexion2.ConnectionString = ConfigurationManager.ConnectionStrings["DBconnexion"].ToString();
+                                connexion2.Open();
+
+                                SqlCommand cmd2 = new SqlCommand("select distinct Annee from info", connexion2);
+
+                                List<string> annees = new List<string>();
+
+
+                                SqlDataReader dr2 = cmd2.ExecuteReader();
+                                while (dr2.Read())
+                                {
+                                    annees.Add(dr2[0].ToString());
+                                }
+                                connexion.Close();
+
+
+
+                                <div class="form-group">
+                                    <select name="apoge">
+                                        @{
+                                            foreach (var VARIABLE in allMaster)
+                                            {
+                                                <option value="@VARIABLE.Split(':')[1]">@VARIABLE</option>
+                                            }
+                                        }
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <select name="annee">
+                                        @{
+                                            foreach (var VARIABLE in annees)
+                                            {
+                                                <option value="@VARIABLE">@VARIABLE</option>
+                                            }
+                                        }
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <select name="sem1">
+
+                                        <option value="s1">s1</option>
+                                        <option value="s3">s3</option>
+
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <select name="sem2">
+
+                                        <option value="s2">s2</option>
+                                        <option value="s4">s4</option>
+
+                                    </select>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <input type="submit" name="formEtudSem" class="btn btn-primary btn-pill" value="Afficher">
+
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <div class="course bg-white h-100 align-self-stretch">
+                    <figure class="m-0">
+                        <a href="course-single.html"><img src="../../MyContent/images/moyMas.jpg" width="500" height="300" alt="Image" class="img-fluid"></a>
+                    </figure>
+                    <div class="course-inner-text py-4 px-4">
+                        <!--<span class="course-price">$20</span>
+                        <div class="meta"><span class="icon-clock-o"></span>4 Lessons / 12 week</div>-->
+                        <h3 style="color: deepskyblue">Master Moyenne</h3>
+                        <p>Fournir la moyenne du Master ainsi que la mention pour un étudiant donné. </p>
+                    </div>
+                    <div class="d-flex border-top stats">
+                        <div class="py-3 px-4"><span class="icon-bar"></span></div>
+                        <!--<div class="py-3 px-4 w-25 ml-auto border-left"><span class="icon-chat"></span> 2</div>-->
+                        <div class="form-box">
+                            @using (Html.BeginForm("MasterMoy", "Soap", FormMethod.Post))
+                            {
+                                SqlConnection connexion = new SqlConnection();
+                                connexion.ConnectionString = ConfigurationManager.ConnectionStrings["DBconnexion"].ToString();
+                                connexion.Open();
+                                SqlCommand cmd = new SqlCommand("select nom,NApoge from Personne", connexion);
+
+                                List<string> allMaster = new List<string>();
+
+
+                                SqlDataReader dr = cmd.ExecuteReader();
+                                while (dr.Read())
+                                {
+                                    allMaster.Add(dr[0].ToString() + ":" + dr[1].ToString());
+                                }
+                                connexion.Close();
+
+                                <div class="form-group">
+                                    <select name="apoge">
+                                        @{
+                                            foreach (var VARIABLE in allMaster)
+                                            {
+                                                <option value="@VARIABLE.Split(':')[1]">@VARIABLE</option>
+                                            }
+                                        }
+                                    </select>
+                                </div>
+                                
+
+
+                                <div class="form-group">
+                                    <input type="submit" name="formEtudSem" class="btn btn-primary btn-pill" value="Afficher">
+
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <div class="course bg-white h-100 align-self-stretch">
+                    <figure class="m-0">
+                        <a href="course-single.html"><img src="../../MyContent/images/ver.jpg" width="500" height="300" alt="Image" class="img-fluid"></a>
+                    </figure>
+                    <div class="course-inner-text py-4 px-4">
+                        <!--<span class="course-price">$20</span>
+                        <div class="meta"><span class="icon-clock-o"></span>4 Lessons / 12 week</div>-->
+                        <h3 style="color: deepskyblue">Validation Semestre</h3>
+                        <p>Vérifier si le semestre est validé. </p>
+                    </div>
+                    <div class="d-flex border-top stats">
+                        <div class="py-3 px-4"><span class="icon-bar"></span></div>
+                        <!--<div class="py-3 px-4 w-25 ml-auto border-left"><span class="icon-chat"></span> 2</div>-->
+                        @using (Html.BeginForm("VerfValidSem", "Soap", FormMethod.Post))
+                        {
+                            SqlConnection connexion = new SqlConnection();
+                            connexion.ConnectionString = ConfigurationManager.ConnectionStrings["DBconnexion"].ToString();
+                            connexion.Open();
+                            SqlCommand cmd = new SqlCommand("select nom,NApoge from Personne", connexion);
+
+                            List<string> allMaster = new List<string>();
+
+
+                            SqlDataReader dr = cmd.ExecuteReader();
+                            while (dr.Read())
+                            {
+                                allMaster.Add(dr[0].ToString() + ":" + dr[1].ToString());
+                            }
+                            connexion.Close();
+
+                            <div class="form-group">
+                                <select name="apoge">
+                                    @{
+                                        foreach (var VARIABLE in allMaster)
+                                        {
+                                            <option value="@VARIABLE.Split(':')[1]">@VARIABLE</option>
+                                        }
+                                    }
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <select name="sem">
+
+                                    <option value="s1">s1</option>
+                                    <option value="s2">s2</option>
+                                    <option value="s3">s3</option>
+                                    <option value="s4">s4</option>
+
+                                </select>
+                            </div>
+
+
+                            <div class="form-group">
+                                <input type="submit" name="formEtudSem" class="btn btn-primary btn-pill" value="Afficher">
+
+                            </div>
+                        }
+                    </div>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-7 text-center">
+                <button class="customPrevBtn btn btn-primary m-1">Prev</button>
+                <button class="customNextBtn btn btn-primary m-1">Next</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+<!---------------------------------------------------------------------- SW 3---------------------------------------------------------------------------------->
+
+<div class="site-section pb-0" id="CRUD">
+
+    <div class="future-blobs">
+        <div class="blob_2">
+            <img src="../../MyContent/images/blob_2.svg" alt="Image">
+        </div>
+        <div class="blob_1">
+            <img src="../../MyContent/images/blob_1.svg" alt="Image">
+        </div>
+    </div>
+    <div class="container">
+        <div class="row mb-5 justify-content-center aos-init aos-animate" data-aos="fade-up" data-aos-delay="">
+            <div class="col-lg-7 text-center">
+                <h2 class="section-title">CRUD</h2>
+                <h2 style="color: green">@TempData["Succes"]</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 ml-auto align-self-start aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+
+                <div class="p-4 rounded bg-white why-choose-us-box">
+
+                    <div class="d-flex align-items-center custom-icon-wrap custom-icon-light mb-3">
+                        <div class="mr-3"><span class="custom-icon-inner"><span class="icon icon-graduation-cap"></span></span></div>
+                        <div><h3 class="m-0"><a href="@Url.Action("UpdatePassPage", "Rest2")">Modifier les mot de passe</a></h3></div>
+                    </div>
+
+                    <div class="d-flex align-items-center custom-icon-wrap custom-icon-light mb-3">
+                        <div class="mr-3"><span class="custom-icon-inner"><span class="icon icon-university"></span></span></div>
+                        <div><h3 class="m-0"><a href="@Url.Action("UpdateNotePage", "Rest2")">Modifier les notes d'un étudiant</a></h3></div>
+                    </div>
+
+                    <div class="d-flex align-items-center custom-icon-wrap custom-icon-light mb-3">
+                        <div class="mr-3"><span class="custom-icon-inner"><span class="icon icon-graduation-cap"></span></span></div>
+                        <div><h3 class="m-0"><a href="@Url.Action("AddEtudPage", "Rest2")">Ajouter un étudiant</a></h3></div>
+                    </div>
+
+                    <div class="d-flex align-items-center custom-icon-wrap custom-icon-light mb-3">
+                        <div class="mr-3"><span class="custom-icon-inner"><span class="icon icon-university"></span></span></div>
+                        <div><h3 class="m-0"><a href="@Url.Action("DeleteEtudPage", "Rest2")">Supprimer un étudiant</a></h3></div>
+                    </div>
+
+
+
+                </div>
+
+
+            </div>
+            <div class="col-lg-7 align-self-end aos-init aos-animate" data-aos="fade-left" data-aos-delay="200">
+                <img src="../../MyContent/images/person_transparent.png" alt="Image" class="img-fluid">
+            </div>
+        </div>
+    </div>
+</div>

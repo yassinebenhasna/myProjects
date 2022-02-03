@@ -1,0 +1,13 @@
+D:\GITHUB\github-repositry\Master-2019\s3\4_services WEB\mini-projet-2\Sw2Rest\bin\Sw2Rest.dll.config
+D:\GITHUB\github-repositry\Master-2019\s3\4_services WEB\mini-projet-2\Sw2Rest\bin\Sw2Rest.dll
+D:\GITHUB\github-repositry\Master-2019\s3\4_services WEB\mini-projet-2\Sw2Rest\bin\Sw2Rest.pdb
+D:\GITHUB\github-repositry\Master-2019\s3\4_services WEB\mini-projet-2\Sw2Rest\bin\EntityFramework.dll
+D:\GITHUB\github-repositry\Master-2019\s3\4_services WEB\mini-projet-2\Sw2Rest\bin\EntityFramework.SqlServer.dll
+D:\GITHUB\github-repositry\Master-2019\s3\4_services WEB\mini-projet-2\Sw2Rest\bin\EntityFramework.xml
+D:\GITHUB\github-repositry\Master-2019\s3\4_services WEB\mini-projet-2\Sw2Rest\bin\EntityFramework.SqlServer.xml
+D:\GITHUB\github-repositry\Master-2019\s3\4_services WEB\mini-projet-2\Sw2Rest\bin\fr\EntityFramework.resources.dll
+D:\GITHUB\github-repositry\Master-2019\s3\4_services WEB\mini-projet-2\Sw2Rest\obj\Debug\Sw2Rest.csproj.CoreCompileInputs.cache
+D:\GITHUB\github-repositry\Master-2019\s3\4_services WEB\mini-projet-2\Sw2Rest\obj\Debug\Sw2Rest.csproj.CopyComplete
+D:\GITHUB\github-repositry\Master-2019\s3\4_services WEB\mini-projet-2\Sw2Rest\obj\Debug\Sw2Rest.dll
+D:\GITHUB\github-repositry\Master-2019\s3\4_services WEB\mini-projet-2\Sw2Rest\obj\Debug\Sw2Rest.pdb
+D:\GITHUB\github-repositry\Master-2019\s3\4_services WEB\mini-projet-2\Sw2Rest\obj\Debug\Sw2Rest.csprojAssemblyReference.cache
